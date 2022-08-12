@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const authRoutes = require("./routes/auth");
+const noteRoutes = require("./routes/notes");
 const client = require("./configs/db");
 
 app.use(express.json());
@@ -15,6 +16,7 @@ app.get("/", (req,res) => {
 });
 
 app.use("/auth", authRoutes);
+app.use("/note", noteRoutes);
 
 client.connect(() => {
     console.log("Connected to database!")

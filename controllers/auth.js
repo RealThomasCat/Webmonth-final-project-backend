@@ -26,7 +26,7 @@ exports.signUp = (req, res) => {
   // const isValid = temperoryData.findIndex((ele) => (ele.email === email));
 
   client
-    .query(`SELECT * FROM users where email = '${email}';`)
+    .query(`SELECT * FROM users WHERE email = '${email}';`)
     .then((data) => {
       isValid = data.rows;
 
@@ -85,7 +85,7 @@ exports.signIn = (req, res) => {
   // const isValid = temperoryData.findIndex((ele) => (ele.email === email));
 
   client
-    .query(`SELECT * FROM users where email = '${email}';`)
+    .query(`SELECT * FROM users WHERE email = '${email}';`)
     .then((data) => {
       userData = data.rows;
 
